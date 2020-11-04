@@ -1,0 +1,18 @@
+name: 自动复制静态文件到服务器
+on: [push]
+jobs:
+  scp-to-cloud-tencent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: deploy file to server
+        uses: appleboy/scp-action@master
+        env: 
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.KEY }}
+        with:
+          source: "./*"
+          target: "/usr/share/nginx/html"
+          strip_components: 1
