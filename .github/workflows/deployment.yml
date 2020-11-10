@@ -1,4 +1,4 @@
-name: 自动复制静态文件到服务器
+name: auto-publish
 on: [push]
 jobs:
   scp-to-cloud-tencent:
@@ -13,6 +13,6 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
-          source: "./dest/*"
+          source: "./dist/*"
           target: "/usr/share/nginx/html"
           strip_components: 1
