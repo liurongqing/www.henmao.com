@@ -6,7 +6,7 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <title>狠猫游戏教程</title>
+    <title>javascript技术展示</title>
     <link rel="canonical" href="http://localhost/github/private/minigame/minigame-website/index.html" />
     <link rel="icon" href="favicon.jpg" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
@@ -99,7 +99,7 @@
         }
 
         amp-list div[role='list'] {
-            text-align: center;
+            text-align: left;
         }
 
         amp-list div[role='listitem'] {
@@ -118,17 +118,19 @@
         }
 
         amp-list .action {
-            position: absolute;
-            bottom: 0;
+            /* position: absolute;
+            bottom: 0; */
             padding: 6px 0;
             width: 100%;
+            height: 120px;
             display: flex;
             justify-content: space-around;
             color: #fff;
             font-size: 12px;
             background: rgba(185, 18, 27, 0.8);
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
+            border-radius: 6px;
+            /* border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px; */
         }
 
         amp-list .action a {
@@ -183,15 +185,21 @@
 
 <body>
     <header>
-        <amp-img alt="logo" src="images/logo.jpg" width="120" height="60"></amp-img>
+        <!-- <amp-img alt="logo" src="images/logo.jpg" width="120" height="60"></amp-img> -->
+        javascript 技术展示
     </header>
 
     <amp-list layout="fixed-height" height="400" src="/list.json">
         <template type="amp-mustache">
             <div>
                 <div class="item-bg-box">
-                    <amp-img alt="{{ alt }}" src="{{ src }}" layout="responsive" width="320" height="240"></amp-img>
                     <div class="action">
+                        <a target="_blank" href="{{ url.github }}">
+                            <span>{{ name }}</span>
+                        </a>
+                    </div>
+                    <!-- <amp-img alt="{{ alt }}" src="{{ src }}" layout="responsive" width="320" height="240"></amp-img> -->
+                    <!-- <div class="action">
                         <a target="_blank" href="{{ url.github }}">
                             <amp-img class="action-img" alt="源码图标" src="images/icon_github.png" layout="fixed"
                                 width="16" height="16"></amp-img>
@@ -207,14 +215,20 @@
                             </amp-img>
                             <span>演示</span>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
-
                 <div class="name">{{ name }}</div>
+
+                <!-- <div class="name">{{ name }}</div> -->
             </div>
         </template>
     </amp-list>
-    <section class="footer">微信： 16620882081</section>
+    <section class="footer">
+        <span>@2023</span>
+        <span>16620882081</span>
+        <a target="_blank" href="https://beian.miit.gov.cn/">粤ICP备2020131308号-1</a> 
+        <!-- 微信： 16620882081 -->
+    </section>
 </body>
 
 </html>
